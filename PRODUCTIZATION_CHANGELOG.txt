@@ -1,0 +1,39 @@
+SPORTVISION Productization Changelog
+
+Created a new standalone production root:
+C:\Users\OMEN\OneDrive\Documents\machine learning\ML projects\SPORTVISION
+
+Old repositories were not moved or deleted.
+
+Product architecture:
+- Single FastAPI process.
+- Frontend served at http://127.0.0.1:8000/.
+- No Vite dev server.
+- No separate backend terminal.
+- No separate analytics terminal.
+- Browser webcam live feed via getUserMedia + WebSocket frame transport.
+- Recorded upload analysis via FastAPI upload + background analysis thread.
+- Browser MJPEG stream for recorded video overlays.
+- JSON, CSV, and PDF report endpoints.
+
+Launchers:
+- run_sportvision.py
+- launch_sportvision.bat
+
+Detection safety:
+- Copied existing YOLO/ByteTrack/Tracker/team/player-ball modules into the new product root.
+- Model path preserved: models/best.pt.
+- Detection confidence preserved at 0.1 inside the product wrapper.
+- No cv2.imshow or cv2.destroyAllWindows are used by the product server.
+
+Analytics stability:
+- New product uses passive PlayerAnalytics with jump rejection, smoothing, non-negative metrics, and NaN protection.
+- Speed is shown as informational text only.
+- Distance accumulation rejects tracker jumps above 100px and avoids random reset behavior.
+
+Frontend:
+- Dark Sports Command Center theme.
+- One URL experience.
+- Home, Upload, Live, and Dashboard screens.
+- Aligned player table grid.
+- KPI cards, possession donut, speed bars, activity feed, player stats, and report buttons.

@@ -1,0 +1,76 @@
+SPORTVISION Phase 1 Changelog
+
+Scope:
+- Stabilization and coach-grade analytics only.
+- Detection pipeline was not modified.
+- YOLO, ByteTrack, Tracker, TeamAssigner, model loading, thresholds, and tracking logic remain untouched.
+
+Files changed:
+- app/sportvision_server.py
+- app/static/index.html
+- app/static/sportvision.js
+- PHASE1_CHANGELOG.txt
+
+Bug fixes:
+1. Distance stability
+   - Moved analytics state into each session.
+   - Persisted previous positions and distance per session.
+   - Preserved analytics-side jump rejection and smoothing through PlayerAnalytics.
+   - Metrics are clamped to avoid NaN and negative values.
+
+2. Heatmaps restored
+   - Added automatic heatmap generation under data/reports/heatmaps/.
+   - Generates player heatmaps, touch maps, and team heatmaps after finalization.
+   - Dashboard now renders heatmaps automatically from session state.
+
+3. PDF/CSV/JSON reports restored
+   - JSON report writes analytics_report data.
+   - CSV writes current player analytics.
+   - PDF writes match metadata, summary, insights, and heatmap images.
+   - Fixed report deadlock by using re-entrant session locks.
+
+4. Live final analysis
+   - Live WebSocket disconnect and browser Stop Live both finalize the session.
+   - Live sessions now generate summaries, heatmaps, insights, and reports.
+
+5. Dashboard widgets restored
+   - KPI cards.
+   - Player table.
+   - Possession chart.
+   - Possession timeline.
+   - Zone occupancy.
+   - Heatmaps and touch maps.
+   - Tactical insights.
+   - Reports section.
+
+New analytics:
+- Possession timeline.
+- Touch maps.
+- 9-zone occupancy.
+- Work rate: distance covered / time played.
+- Rule-based tactical insights.
+
+Validation evidence:
+- Health endpoint passed with model found and GPU active.
+- Upload test using input_videos/08fd33_4.mp4:
+  - Distance increased from 0.000 km to 0.167 km during processing.
+  - Finalized session generated 32 heatmaps.
+  - Tactical insights generated.
+  - Zone occupancy generated.
+- Report exports:
+  - JSON: HTTP 200, 14258 bytes.
+  - CSV: HTTP 200, 735 bytes.
+  - PDF: HTTP 200, 14284 bytes.
+- Live WebSocket test:
+  - Sent sampled video frames through ws/live.
+  - Session auto-finalized after disconnect.
+  - Live distance reached 0.005 km.
+  - Live finalization generated 23 heatmaps and 3 insights.
+- Bad upload test:
+  - .txt upload rejected with HTTP 400.
+- Browser dashboard audit:
+  - Heatmaps & Touch Maps visible.
+  - Zone Occupancy visible.
+  - Possession Timeline visible.
+  - Tactical Insights visible.
+  - Player Performance table visible.

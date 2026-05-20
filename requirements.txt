@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+python-multipart
+opencv-python
+numpy
+ultralytics
+supervision
+pandas
+scikit-learn
+reportlab

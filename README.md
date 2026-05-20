@@ -1,157 +1,30 @@
-# SPORTVISION
-SPORTVISION  — A real-time football analytics project that uses AI and Computer Vision to track players and the ball during a match. It provides live insights such as player speed, cumulative distance covered, heatmaps, and an interactive dashboard for analyzing match performance using YOLO, FastAPI, and GPU acceleration.
+# Football Analysis Project
 
-It is an AI-based football analytics project developed to turn football match videos into meaningful insights and interactive visual analytics. The system processes football footage in real time, tracks players and the ball, and generates performance metrics that help analyze match activity more effectively.
+## Introduction
+The goal of this project is to detect and track players, referees, and footballs in a video using YOLO, one of the best AI object detection models available. We will also train the model to improve its performance. Additionally, we will assign players to teams based on the colors of their t-shirts using Kmeans for pixel segmentation and clustering. With this information, we can measure a team's ball acquisition percentage in a match. We will also use optical flow to measure camera movement between frames, enabling us to accurately measure a player's movement. Furthermore, we will implement perspective transformation to represent the scene's depth and perspective, allowing us to measure a player's movement in meters rather than pixels. Finally, we will calculate a player's speed and the distance covered. This project covers various concepts and addresses real-world problems, making it suitable for both beginners and experienced machine learning engineers.
 
-The idea behind this project was to combine Computer Vision and Deep Learning with a web-based experience to create a system that not only detects objects but also provides useful match intelligence.
+![Screenshot](output_videos/screenshot.png)
 
----
+## Modules Used
+The following modules are used in this project:
+- YOLO: AI object detection model
+- Kmeans: Pixel segmentation and clustering to detect t-shirt color
+- Optical Flow: Measure camera movement
+- Perspective Transformation: Represent scene depth and perspective
+- Speed and distance calculation per player
 
-## Features
+## Trained Models
+- [Trained Yolo v5](https://drive.google.com/file/d/1DC2kCygbBWUKheQ_9cFziCsYVSRw6axK/view?usp=sharing)
 
-* Real-time player tracking
-* Football detection and tracking
-* Speed estimation
-* Cumulative distance calculation
-* Heatmap generation
-* Dynamic analytics dashboard
-* Live processed video preview
-* Upload and analyze football videos
-* GPU accelerated processing
-* Real-time backend streaming
+## Sample video
+-  [Sample input video](https://drive.google.com/file/d/1t6agoqggZKx6thamUuPAIdN_1zR9v9S_/view?usp=sharing)
 
----
-
-## Tech Stack
-
-### Artificial Intelligence / Computer Vision
-
-* YOLO
-* OpenCV
-* NumPy
-* Deep Learning
-
-### Backend
-
-* FastAPI
-* Uvicorn
-* WebSockets
-
-### Frontend
-
-* HTML
-* CSS
-* JavaScript
-
-### Hardware Acceleration
-
-* NVIDIA CUDA
-* PyTorch GPU support
-
----
-
-## Project Workflow
-
-Football Match Video / Live Stream
-
-↓
-
-Player and Ball Detection
-
-↓
-
-Object Tracking
-
-↓
-
-Speed and Distance Estimation
-
-↓
-
-Real-Time Processing
-
-↓
-
-Live Preview Generation
-
-↓
-
-Analytics Dashboard and Heatmaps
-
----
-
-## System Capabilities
-
-SPORTVISION can:
-
-* Detect players and football in match footage
-* Track player movement across frames
-* Estimate player speed
-* Calculate cumulative distance covered
-* Generate heatmaps
-* Display match insights through an interactive dashboard
-* Stream processed video output in real time
-
----
-
-## Installation
-
-Clone the repository:
-
-```bash
-git clone <your-repository-link>
-cd SPORTVISION
-```
-
-Create a virtual environment:
-
-```bash
-python -m venv .venv
-```
-
-Activate environment:
-
-Windows:
-
-```bash
-.venv\Scripts\activate
-```
-
-Install dependencies:
-
-```bash
-pip install -r requirements.txt
-```
-
-Run the application:
-
-```bash
-python run_sportvision.py
-```
-
-Open in browser:
-
-```text
-http://127.0.0.1:8000
-```
-
----
-
-## Future Improvements
-
-* Multi-camera support
-* Team formation analysis
-* Passing network visualization
-* Tactical analysis
-* Player comparison analytics
-* Cloud deployment support
-
----
-
-## Author
-
-Kushagra Shukla
-B.Tech CSE | Machine Learning and Computer Vision Enthusiast
-
-If you found this project interesting, feel free to give it a star.
-
+## Requirements
+To run this project, you need to have the following requirements installed:
+- Python 3.x
+- ultralytics
+- supervision
+- OpenCV
+- NumPy
+- Matplotlib
+- Pandas

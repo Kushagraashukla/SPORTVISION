@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SportVision</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root{--neon:#00E5A0;--neon2:#00C8FF;--accent:#FF6B35;--amber:#FFD166;--dark:#060D18;--surface:#0B1525;--surface2:#101E34;--surface3:#162440;--border:rgba(0,229,160,.15);--border-hover:rgba(0,229,160,.35);--text:#E8F4FF;--muted:rgba(232,244,255,.56);--font-display:'Barlow Condensed',sans-serif;--font-body:'Barlow',sans-serif}
+    *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 20% 0%,rgba(0,200,255,.12),transparent 30%),var(--dark);color:var(--text);font-family:var(--font-body)}button,input{font:inherit}.shell{width:min(1680px,100%);margin:auto;padding:18px}.nav{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}.brand{display:flex;gap:10px;align-items:center}.mark{width:44px;height:44px;border:1px solid var(--border-hover);border-radius:8px;display:grid;place-items:center;color:var(--neon);background:rgba(0,229,160,.08)}.brand strong,h1,h2,h3,.num{font-family:var(--font-display);letter-spacing:0}.brand strong{font-size:28px}.brand small{display:block;color:var(--muted)}.nav-actions{display:flex;gap:8px;flex-wrap:wrap}.btn{border:1px solid var(--border);border-radius:8px;background:rgba(0,229,160,.08);color:var(--text);padding:10px 14px;cursor:pointer}.btn.primary{background:var(--neon);border-color:var(--neon);color:#03120d;font-weight:800}.btn.active{border-color:var(--neon2);background:rgba(0,200,255,.1)}.panel{background:linear-gradient(180deg,rgba(16,30,52,.94),rgba(11,21,37,.96));border:1px solid var(--border);border-radius:8px;box-shadow:0 20px 50px rgba(0,0,0,.28)}.hero{min-height:330px;display:grid;align-content:center;gap:18px}.tag{width:fit-content;border:1px solid var(--border);border-radius:999px;padding:8px 12px;color:var(--neon);background:rgba(0,229,160,.08);font-family:var(--font-display);font-weight:800}.hero h1{font-size:clamp(64px,13vw,170px);line-height:.82;margin:0}.hero p{max-width:780px;color:var(--muted);font-size:19px;line-height:1.5}.neon{color:var(--neon)}.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.mode{position:relative;min-height:210px;padding:26px;text-align:left;color:var(--text);overflow:hidden}.mode:after{content:"";position:absolute;right:0;top:0;width:4px;height:100%;background:var(--neon);opacity:0;transition:.2s}.mode:hover{border-color:var(--border-hover);transform:translateY(-2px)}.mode:hover:after{opacity:1}.mode h2{font-size:48px;margin:48px 0 8px}.mode p{color:var(--muted)}.screen{display:none}.screen.active{display:block;animation:up .25s ease both}@keyframes up{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}@keyframes scan{from{left:-60%}to{left:140%}}@keyframes pulse{50%{opacity:.35}}.kpi{min-height:110px;padding:16px}.kpi p{color:var(--muted);text-transform:uppercase;font-size:12px;font-weight:800}.kpi strong{display:block;font-family:var(--font-display);font-size:40px;line-height:1;color:var(--neon)}.drop{min-height:360px;display:grid;place-items:center;align-content:center;gap:14px;padding:30px;border-style:dashed;text-align:center}.drop.drag{border-style:solid;border-color:var(--neon)}.error{color:var(--accent)}.preview{position:relative;min-height:500px;display:grid;place-items:center;overflow:hidden;background:#07111f}.preview video,.preview img{width:100%;height:100%;object-fit:contain;max-height:620px}.scan{position:absolute;top:0;left:-60%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(0,200,255,.25),transparent);animation:scan 2.5s linear infinite;pointer-events:none}.live-badge{position:absolute;top:14px;right:14px;border:1px solid var(--border);border-radius:999px;padding:8px 12px;background:rgba(11,21,37,.85);font-weight:800}.live-badge span{display:inline-block;width:8px;height:8px;border-radius:50%;background:#ff4040;margin-right:6px;animation:pulse .8s infinite}.dashboard{margin-top:14px}.charts{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}.chart{padding:16px;min-height:320px}.table{padding:16px;margin-top:12px;overflow:auto}.thead,.row{display:grid;grid-template-columns:64px minmax(130px,1.3fr) minmax(100px,.9fr) minmax(110px,.9fr) minmax(110px,.9fr) minmax(90px,.7fr) minmax(150px,1.2fr);gap:12px;align-items:center;min-width:900px}.thead{color:var(--muted);font-size:12px;text-transform:uppercase;font-weight:800;border-bottom:1px solid rgba(232,244,255,.12);padding:10px}.row{min-height:58px;border-bottom:1px solid rgba(232,244,255,.07);padding:10px}.bar{height:8px;background:rgba(232,244,255,.08);border-radius:999px;overflow:hidden}.bar span{display:block;height:100%;background:linear-gradient(90deg,var(--neon),var(--neon2))}.activity{max-height:320px;overflow:auto}.activity div{display:grid;grid-template-columns:84px 1fr;gap:10px;padding:9px 0;border-bottom:1px solid rgba(232,244,255,.08)}.activity span{color:var(--neon2);font-family:var(--font-display);font-weight:800}.donut{width:180px;height:180px;border-radius:50%;background:conic-gradient(var(--neon) 0 58%,var(--neon2) 58% 100%);display:grid;place-items:center;margin:20px auto}.donut:after{content:"58%";width:112px;height:112px;border-radius:50%;background:var(--surface);display:grid;place-items:center;color:var(--neon);font-family:var(--font-display);font-size:42px;font-weight:900}.mini-chart{display:grid;gap:10px}.mini-chart label{display:grid;grid-template-columns:80px 1fr 60px;gap:10px;color:var(--muted)}.reports{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}@media(max-width:1000px){.grid4,.grid3,.grid2,.charts{grid-template-columns:1fr}.nav{display:block}.nav-actions{margin-top:10px}.hero h1{font-size:72px}}
+    .timeline{display:flex;align-items:end;gap:6px;height:210px}.timeline div{flex:1;background:linear-gradient(180deg,var(--neon),var(--neon2));border-radius:6px 6px 0 0;min-height:8px}.zones{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.zone{min-height:62px;border:1px solid var(--border);border-radius:8px;display:grid;place-items:center;background:rgba(0,229,160,.04);font-family:var(--font-display);font-size:22px}.heatmaps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}.heatmaps figure{margin:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#07111f}.heatmaps img{display:block;width:100%;height:180px;object-fit:cover}.heatmaps figcaption{padding:8px;color:var(--muted)}.insights{display:grid;gap:10px}.insights div{border:1px solid var(--border);border-radius:8px;padding:12px;background:rgba(0,200,255,.06)}
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <header class="nav">
+      <div class="brand"><div class="mark">SV</div><div><strong>SPORTVISION</strong><small>One app command center</small></div></div>
+      <div class="nav-actions">
+        <button class="btn" onclick="show('home')">Home</button>
+        <button class="btn" onclick="show('upload')">Upload</button>
+        <button class="btn" onclick="show('live')">Live</button>
+        <button class="btn" onclick="show('dashboard')">Dashboard</button>
+      </div>
+    </header>
+
+    <section id="home" class="screen active">
+      <div class="hero">
+        <span class="tag">Dark Sports Command Center</span>
+        <h1>Match <span class="neon">ANALYTICS</span></h1>
+        <p>Upload match footage or start a browser webcam feed. SportVision runs the detection pipeline, streams overlays, and updates analytics from one URL.</p>
+      </div>
+      <div class="grid2">
+        <button class="panel mode" onclick="show('upload')"><h2>Upload Video</h2><p>Analyze recorded match footage with live browser preview.</p></button>
+        <button class="panel mode" onclick="show('live')"><h2>Live Feed</h2><p>Use browser webcam permission. No OpenCV popup windows.</p></button>
+      </div>
+    </section>
+
+    <section id="upload" class="screen">
+      <h1 class="num">Upload Video Analysis</h1>
+      <div class="panel drop" id="drop">
+        <h2 class="num">Drop match footage</h2>
+        <p>MP4, MOV, AVI, MKV. Max 4GB, 120min, 720p+ recommended.</p>
+        <input id="file" type="file" accept=".mp4,.mov,.avi,.mkv,video/*">
+        <button class="btn primary" onclick="upload()">Upload & Analyse</button>
+        <strong id="uploadMsg" class="error"></strong>
+      </div>
+      <div class="panel preview" style="margin-top:12px">
+        <img id="uploadAnnotated" alt="">
+        <div class="scan"></div>
+        <div class="live-badge"><span></span>LIVE</div>
+      </div>
+      <div class="grid3" style="margin-top:12px"><div class="panel kpi"><p>File Size</p><strong>4GB</strong></div><div class="panel kpi"><p>Duration</p><strong>120m</strong></div><div class="panel kpi"><p>Resolution</p><strong>720p+</strong></div></div>
+    </section>
+
+    <section id="live" class="screen">
+      <h1 class="num">Live Feed Analysis</h1>
+      <div class="grid2">
+        <div class="panel preview"><video id="webcam" autoplay muted playsinline></video><img id="liveAnnotated" alt=""><div class="scan"></div><div class="live-badge"><span></span>LIVE</div></div>
+        <div>
+          <button class="btn primary" onclick="startLive()">Start Live Feed</button>
+          <button class="btn" onclick="stopLive()">Stop</button>
+          <div class="panel chart" style="margin-top:12px"><h2 class="num">Live Activity</h2><div id="liveEvents" class="activity"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="dashboard" class="screen">
+      <h1 class="num">Analytics Dashboard</h1>
+      <div class="grid4 dashboard">
+        <div class="panel kpi"><p>Players Tracked</p><strong id="kPlayers">0</strong></div>
+        <div class="panel kpi"><p>Total Distance</p><strong id="kDistance">0.00</strong></div>
+        <div class="panel kpi"><p>Ball Touches</p><strong id="kTouches">0</strong></div>
+        <div class="panel kpi"><p>Status</p><strong id="kStatus">READY</strong></div>
+      </div>
+      <div class="charts">
+        <div class="panel chart"><h2 class="num">Possession</h2><div class="donut"></div></div>
+        <div class="panel chart"><h2 class="num">Speed Bars</h2><div id="speedBars" class="mini-chart"></div></div>
+        <div class="panel chart"><h2 class="num">Possession Timeline</h2><div id="timeline" class="timeline"></div></div>
+        <div class="panel chart"><h2 class="num">Zone Occupancy</h2><div id="zones" class="zones"></div></div>
+      </div>
+      <div class="panel chart"><h2 class="num">Heatmaps & Touch Maps</h2><div id="heatmaps" class="heatmaps"></div></div>
+      <div class="panel chart"><h2 class="num">Tactical Insights</h2><div id="insights" class="insights"></div></div>
+      <div class="panel table"><h2 class="num">Player Performance</h2><div class="thead"><span>#</span><span>Player</span><span>Team</span><span>Distance</span><span>Speed</span><span>Touches</span><span>Activity</span></div><div id="players"></div></div>
+      <div class="reports"><a id="jsonReport" class="btn">JSON</a><a id="csvReport" class="btn">CSV</a><a id="pdfReport" class="btn">PDF</a></div>
+    </section>
+  </main>
+  <canvas id="capture" width="640" height="480" hidden></canvas>
+  <script src="/static/sportvision.js"></script>
+</body>
+</html>
